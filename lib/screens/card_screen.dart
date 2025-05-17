@@ -9,7 +9,7 @@ class CardScreen extends StatefulWidget {
 }
 
 class _CardScreenState extends State<CardScreen> {
-  final List<String> Images=[
+  final List<String> Images = [
     'assets/images/1_javascript.jpg',
     'assets/images/2_paython.jpg',
     'assets/images/3_flutter.jpg',
@@ -21,55 +21,21 @@ class _CardScreenState extends State<CardScreen> {
   ];
 
   final List<Map<String, String>> middleRow = [
-    {
-      'Batch': 'ব্যাচ ১১',
-      'Sit': '৩ সিট বাকি',
-      'Remain': '১০ দিন বাকি',
-    },
+    {'Batch': 'ব্যাচ ১১', 'Sit': '৩ সিট বাকি', 'Remain': '১০ দিন বাকি'},
 
-    {
-      'Batch': 'ব্যাচ ১০',
-      'Sit': '৩ সিট বাকি',
-      'Remain': '১০ দিন বাকি',
-    },
+    {'Batch': 'ব্যাচ ১০', 'Sit': '৩ সিট বাকি', 'Remain': '১০ দিন বাকি'},
 
-    {
-      'Batch': 'ব্যাচ ১১',
-      'Sit': '১০ সিট বাকি',
-      'Remain': '১০ দিন বাকি',
-    },
+    {'Batch': 'ব্যাচ ১১', 'Sit': '১০ সিট বাকি', 'Remain': '১০ দিন বাকি'},
 
-    {
-      'Batch': 'ব্যাচ ৩',
-      'Sit': '৩ সিট বাকি',
-      'Remain': '১০ দিন বাকি',
-    },
+    {'Batch': 'ব্যাচ ৩', 'Sit': '৩ সিট বাকি', 'Remain': '১০ দিন বাকি'},
 
-    {
-      'Batch': 'ব্যাচ ১১',
-      'Sit': '৩ সিট বাকি',
-      'Remain': '৩ দিন বাকি',
-    },
+    {'Batch': 'ব্যাচ ১১', 'Sit': '৩ সিট বাকি', 'Remain': '৩ দিন বাকি'},
 
-    {
-      'Batch': 'ব্যাচ ৩',
-      'Sit': '৩ সিট বাকি',
-      'Remain': '১০ দিন বাকি',
-    },
+    {'Batch': 'ব্যাচ ৩', 'Sit': '৩ সিট বাকি', 'Remain': '১০ দিন বাকি'},
 
-    {
-      'Batch': 'ব্যাচ ৩',
-      'Sit': '১০ সিট বাকি',
-      'Remain': '৩ দিন বাকি',
-    },
+    {'Batch': 'ব্যাচ ৩', 'Sit': '১০ সিট বাকি', 'Remain': '৩ দিন বাকি'},
 
-    {
-      'Batch': 'ব্যাচ ১১',
-      'Sit': '৩ সিট বাকি',
-      'Remain': '১০ দিন বাকি',
-    },
-
-
+    {'Batch': 'ব্যাচ ১১', 'Sit': '৩ সিট বাকি', 'Remain': '১০ দিন বাকি'},
   ];
 
   final List<String> courseTitles = [
@@ -104,24 +70,30 @@ class _CardScreenState extends State<CardScreen> {
     }
     return SafeArea(
       child: Scaffold(
-        body: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          childAspectRatio: childAspectRatio,
-        ),
+        body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: childAspectRatio,
+          ),
           itemCount: Images.length,
 
           itemBuilder: (context, index) {
             return Card(
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)),
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(12.r), topRight: Radius.circular(12)),
-                      child: Image.asset(Images[index]),),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12.r),
+                      topRight: Radius.circular(12),
+                    ),
+                    child: Image.asset(Images[index]),
+                  ),
 
                   Expanded(
                     flex: 2,
@@ -133,63 +105,75 @@ class _CardScreenState extends State<CardScreen> {
                           if (MediaQuery.of(context).size.width > 550)
                             Flexible(
                               child: Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                  //margin: EdgeInsets.only(top: 10),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(4),
-                                    color: Colors.black12,
-                                  ),
-                                  child: Text(
-                                    middleRow[index]['Batch'] ?? '',
-                                    style: TextStyle(fontSize: 10),
-                                    overflow: TextOverflow.ellipsis,
-                                  )),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                  vertical: 2,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(4),
+                                  color: Colors.black12,
+                                ),
+                                child: Text(
+                                  middleRow[index]['Batch'] ?? '',
+                                  style: TextStyle(fontSize: 10),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
                             ),
                           Flexible(
                             child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                //margin: EdgeInsets.only(top: 10),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  color: Colors.black12,
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.group, size: 10),
-                                    SizedBox(width: 2),
-                                    Flexible(
-                                      child: Text(
-                                        middleRow[index]['Sit'] ?? '',
-                                        style: const TextStyle(fontSize: 10, color: Colors.black),
-                                        overflow: TextOverflow.ellipsis,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 4,
+                                vertical: 2,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: Colors.black12,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(Icons.group, size: 10),
+                                  SizedBox(width: 2),
+                                  Flexible(
+                                    child: Text(
+                                      middleRow[index]['Sit'] ?? '',
+                                      style: const TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.black,
                                       ),
+                                      overflow: TextOverflow.ellipsis,
                                     ),
-                                  ],
-                                )),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                           Flexible(
                             child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                //margin: EdgeInsets.only(top: 10),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  color: Colors.black12,
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.access_time_rounded, size: 10),
-                                    SizedBox(width: 2),
-                                    Flexible(
-                                      child: Text(
-                                        middleRow[index]['Remain'] ?? '',
-                                        style: const TextStyle(fontSize: 10),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 4,
+                                vertical: 2,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: Colors.black12,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(Icons.access_time_rounded, size: 10),
+                                  SizedBox(width: 2),
+                                  Flexible(
+                                    child: Text(
+                                      middleRow[index]['Remain'] ?? '',
+                                      style: const TextStyle(fontSize: 10),
+                                      overflow: TextOverflow.ellipsis,
                                     ),
-                                  ],
-                                )),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -197,8 +181,6 @@ class _CardScreenState extends State<CardScreen> {
                   ),
 
                   Divider(),
-
-
 
                   Expanded(
                     flex: 2,
@@ -208,16 +190,17 @@ class _CardScreenState extends State<CardScreen> {
                         onTap: () {
                           showDialog(
                             context: context,
-                            builder: (context) => AlertDialog(
-                              title: Text("Course Details"),
-                              content: Text(courseTitles[index]),
-                              actions: [
-                                TextButton(
-                                  onPressed: () => Navigator.pop(context),
-                                  child: Text("Close"),
+                            builder:
+                                (context) => AlertDialog(
+                                  title: Text("Course Details"),
+                                  content: Text(courseTitles[index]),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(context),
+                                      child: Text("Close"),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
                           );
                         },
                         child: Text(
@@ -258,16 +241,21 @@ class _CardScreenState extends State<CardScreen> {
                               ),
                             ),
                             SizedBox(width: 4),
-                            Icon(Icons.arrow_right_alt_sharp, color: Colors.black, size: 16),
+                            Icon(
+                              Icons.arrow_right_alt_sharp,
+                              color: Colors.black,
+                              size: 16,
+                            ),
                           ],
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             );
-          },),
+          },
+        ),
       ),
     );
   }
