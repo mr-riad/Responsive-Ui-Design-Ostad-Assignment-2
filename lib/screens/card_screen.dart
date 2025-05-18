@@ -89,7 +89,7 @@ class _CardScreenState extends State<CardScreen> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12.r),
+                      topLeft: Radius.circular(12),
                       topRight: Radius.circular(12),
                     ),
                     child: Image.asset(Images[index]),
